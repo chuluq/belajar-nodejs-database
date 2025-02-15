@@ -19,3 +19,5 @@ create table customers
 ) engine innodb;
 
 select * from customers;
+
+select * from customers where name='chuluq';

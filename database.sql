@@ -115,3 +115,14 @@ create table _loves
     constraint customer_loves_fk foreign key (A) references customers (id),
     constraint product_loves_fk foreign key (B) references products (id)
 ) engine innodb;
+
+create database belajar_nodejs_prisma;
+
+use belajar_nodejs_prisma;
+
+show tables;
+
+desc sample;
+
+select *
+from _prisma_migrations;

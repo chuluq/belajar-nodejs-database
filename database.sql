@@ -126,3 +126,6 @@ desc sample;
 
 select *
 from _prisma_migrations;
+
+alter table sample
+add column full_description text;

@@ -75,3 +75,22 @@ create table wallet
 
 select *
 from wallet;
+
+create table comments
+(
+    id          int          not null auto_increment,
+    customer_id varchar(100) not null,
+    title       varchar(100) not null,
+    description text,
+    primary key (id),
+    constraint comments_customer_id_fk foreign key (customer_id) references customers (id)
+) engine InnoDB;
+
+select *
+from comments;
+
+insert into comments(customer_id, title, description)
+values ('chuluq', 'Comment 1', 'Sample comment 1'),
+       ('chuluq', 'Comment 2', 'Sample comment 2'),
+       ('budi', 'Comment 1', 'Sample comment 1'),
+       ('budi', 'Comment 3', 'Sample comment 3');

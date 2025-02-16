@@ -94,3 +94,24 @@ values ('chuluq', 'Comment 1', 'Sample comment 1'),
        ('chuluq', 'Comment 2', 'Sample comment 2'),
        ('budi', 'Comment 1', 'Sample comment 1'),
        ('budi', 'Comment 3', 'Sample comment 3');
+
+create table likes
+(
+    customer_id varchar(100) not null,
+    product_id  varchar(100) not null,
+    primary key (customer_id, product_id),
+    constraint likes_customer_id_fk foreign key (customer_id) references customers (id),
+    constraint likes_product_id_fk foreign key (product_id) references products (id)
+) engine innodb;
+
+select *
+from likes;
+
+create table _loves
+(
+    A varchar(100) not null,
+    B varchar(100) not null,
+    primary key (A, B),
+    constraint customer_loves_fk foreign key (A) references customers (id),
+    constraint product_loves_fk foreign key (B) references products (id)
+) engine innodb;
